@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, Building2, Clock, FileText, IdCard, Landmark, RotateCcw } from "lucide-react";
-import { STEPS, formatNaira, minutesLeft, stepIndex, totalMinutes, type StepId } from "../lib/application";
+import { STEPS, formatDuration, formatNaira, secondsLeft, stepIndex, totalSeconds, type StepId } from "../lib/application";
 import { useApplication } from "../lib/store";
 import { AppHeader, SavedAgo } from "../components/flow/Shell";
 import { Card, Eyebrow, ProgressBar } from "../components/ui/Surface";
@@ -34,7 +34,7 @@ export function StartScreen() {
           <p className="mt-3 text-fg-muted">
             {hasDraft
               ? "Your application is saved on this device. Pick up exactly where you stopped."
-              : `${STEPS.length} short steps, about ${totalMinutes()} minutes. Save anytime and come back when it suits you.`}
+              : `${STEPS.length} short steps, about ${formatDuration(totalSeconds(), "long")}. Save anytime and come back when it suits you.`}
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export function StartScreen() {
                 </div>
                 <div className="rounded-sm bg-subtle px-3 py-2.5">
                   <dt className="text-fg-muted">Time left</dt>
-                  <dd className="font-semibold text-fg">About {minutesLeft(resumeAt, app.business.registered)} min</dd>
+                  <dd className="font-semibold text-fg">About {formatDuration(secondsLeft(resumeAt, app.business.registered))}</dd>
                 </div>
               </dl>
               <Button block iconRight={<ArrowRight aria-hidden className="size-4" />} onClick={() => go(resumeAt)}>
@@ -99,7 +99,7 @@ export function StartScreen() {
                 Start application
               </Button>
               <p className="flex items-center justify-center gap-1.5 text-caption text-fg-muted">
-                <Clock aria-hidden className="size-3.5" /> About {totalMinutes()} minutes · Progress saves automatically
+                <Clock aria-hidden className="size-3.5" /> About {formatDuration(totalSeconds(), "long")} · Progress saves automatically
               </p>
             </div>
           </>

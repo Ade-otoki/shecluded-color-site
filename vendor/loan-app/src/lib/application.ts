@@ -3,15 +3,18 @@ import { z } from "zod";
 /* ---------- Steps ---------- */
 
 /**
- * Seconds per step for a typical applicant, from the KLM model in scripts/completion-time.mjs
- * (registered businesses also enter a CAC number and upload a certificate). Re-run it when a step changes.
+ * Seconds per step. The full application was timed at 1m 47s (107s) end to end on the registered path;
+ * that total is split across steps in proportion to the KLM weights in scripts/completion-time.mjs.
+ * The unregistered path (no CAC number or certificate) scales by the same factor to 96s.
  */
+export const MEASURED_TOTAL_SECONDS = 107;
+
 export const STEPS = [
-  { id: "business", name: "Your business", short: "Business", seconds: { registered: 121, unregistered: 95 } },
-  { id: "loan", name: "Your loan", short: "Loan", seconds: { registered: 87, unregistered: 87 } },
-  { id: "documents", name: "Documents", short: "Documents", seconds: { registered: 97, unregistered: 81 } },
-  { id: "review", name: "Review", short: "Review", seconds: { registered: 34, unregistered: 34 } },
-  { id: "consent", name: "Consent", short: "Consent", seconds: { registered: 38, unregistered: 38 } },
+  { id: "business", name: "Your business", short: "Business", seconds: { registered: 34, unregistered: 27 } },
+  { id: "loan", name: "Your loan", short: "Loan", seconds: { registered: 25, unregistered: 25 } },
+  { id: "documents", name: "Documents", short: "Documents", seconds: { registered: 27, unregistered: 23 } },
+  { id: "review", name: "Review", short: "Review", seconds: { registered: 10, unregistered: 10 } },
+  { id: "consent", name: "Consent", short: "Consent", seconds: { registered: 11, unregistered: 11 } },
 ] as const;
 
 export type StepId = (typeof STEPS)[number]["id"];
@@ -20,15 +23,24 @@ type Step = (typeof STEPS)[number];
 export const stepIndex = (id: StepId) => STEPS.findIndex((s) => s.id === id);
 
 /** `registered` is unknown until step 1 is answered; assume the longer path so we never under-promise. */
-const secondsFor = (s: Step, registered?: string) => (registered === "no" ? s.seconds.unregistered : s.seconds.registered);
+export const stepSeconds = (s: Step, registered?: string) => (registered === "no" ? s.seconds.unregistered : s.seconds.registered);
 
-export const stepMinutes = (s: Step, registered?: string) => Math.max(1, Math.round(secondsFor(s, registered) / 60));
+/** Seconds remaining from the start of `id`, inclusive. */
+export const secondsLeft = (id: StepId, registered?: string) =>
+  STEPS.slice(stepIndex(id)).reduce((sum, s) => sum + stepSeconds(s, registered), 0);
 
-/** Minutes remaining from the start of `id`, inclusive. Rounded up so we never under-promise. */
-export const minutesLeft = (id: StepId, registered?: string) =>
-  Math.max(1, Math.ceil(STEPS.slice(stepIndex(id)).reduce((sum, s) => sum + secondsFor(s, registered), 0) / 60));
+export const totalSeconds = (registered?: string) => secondsLeft("business", registered);
 
-export const totalMinutes = (registered?: string) => minutesLeft("business", registered);
+/**
+ * Short durations for people, always rounded up so we never under-promise:
+ * under a minute in 5-second steps ("35 sec"), otherwise in half minutes ("1½ min", "2 minutes").
+ */
+export function formatDuration(seconds: number, unit: "short" | "long" = "short") {
+  if (seconds < 55) return `${Math.max(10, Math.ceil(seconds / 5) * 5)} sec`;
+  const minutes = Math.ceil(seconds / 30) / 2;
+  const n = Number.isInteger(minutes) ? String(minutes) : `${Math.floor(minutes)}½`;
+  return unit === "long" ? `${n} minute${minutes === 1 ? "" : "s"}` : `${n} min`;
+}
 
 /* ---------- Options ---------- */
 

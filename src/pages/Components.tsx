@@ -465,7 +465,7 @@ export function Progress() {
   return (
     <ComponentPage
       title="Progress & steps"
-      intro="Every step shows where the applicant is, the step name and modeled minutes left. Desktop uses a step rail; phones use a five-segment bar."
+      intro="Every step shows where the applicant is, the step name and the time left, based on a measured 1m 47s completion. Desktop uses a step rail; phones use a five-segment bar."
       overview={
         <Specimen label={label("Step rail and mobile progress · switch steps to see both update")}>
           <StepDemo />

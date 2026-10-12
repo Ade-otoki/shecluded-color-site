@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { clsx } from "clsx";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowLeft, Check, CloudCheck, LoaderCircle, MessageCircle, X } from "lucide-react";
-import { STEPS, minutesLeft, stepIndex, stepMinutes, type StepId } from "../../lib/application";
+import { STEPS, formatDuration, secondsLeft, stepIndex, stepSeconds, type StepId } from "../../lib/application";
 import { useApplication } from "../../lib/store";
 import { Button } from "../ui/Button";
 import logoUrl from "../../assets/shecluded-logo.svg";
@@ -117,7 +117,7 @@ export function StepRail({ current }: { current: StepId }) {
           {ci + 1}
           <span className="text-fg-placeholder"> / {STEPS.length}</span>
         </p>
-        <p className="mt-2 text-small text-fg-muted">About {minutesLeft(current, app.business.registered)} min left</p>
+        <p className="mt-2 text-small text-fg-muted">About {formatDuration(secondsLeft(current, app.business.registered))} left</p>
       </div>
       <ol className="flex flex-col">
         {STEPS.map((s, i) => {
@@ -129,7 +129,7 @@ export function StepRail({ current }: { current: StepId }) {
               <span className="flex flex-1 flex-col text-left">
                 <span className={clsx("text-small", state === "upcoming" ? "text-fg-muted" : "font-medium text-fg")}>{s.name}</span>
               </span>
-              <span className="text-caption text-fg-muted tabular">{stepMinutes(s, app.business.registered)} min</span>
+              <span className="text-caption text-fg-muted tabular">{formatDuration(stepSeconds(s, app.business.registered))}</span>
             </>
           );
           return (
@@ -176,7 +176,7 @@ export function MobileProgress({ current }: { current: StepId }) {
         <span>
           Step {ci + 1} of {STEPS.length} · <span className="text-fg">{STEPS[ci].name}</span>
         </span>
-        <span>~{minutesLeft(current, app.business.registered)} min left</span>
+        <span>~{formatDuration(secondsLeft(current, app.business.registered))} left</span>
       </div>
     </div>
   );
