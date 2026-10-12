@@ -1,0 +1,1241 @@
+{
+  "semantic": {
+    "text/primary": {
+      "ref": "neutral.900",
+      "use": "Body copy, headings, amounts.",
+      "hex": "#1F1B1D"
+    },
+    "text/secondary": {
+      "ref": "neutral.600",
+      "use": "Supporting copy, labels, meta. Passes AA on every light surface.",
+      "hex": "#5E5158"
+    },
+    "text/placeholder": {
+      "ref": "neutral.500",
+      "use": "Placeholder and hint text on white only.",
+      "hex": "#82717A"
+    },
+    "text/link": {
+      "ref": "pink.600",
+      "use": "Links on white and neutral surfaces.",
+      "hex": "#D2137A"
+    },
+    "text/link-on-tint": {
+      "ref": "pink.700",
+      "use": "Pink text and links on pink tint surfaces.",
+      "hex": "#BB116D"
+    },
+    "text/link-on-tint-hover": {
+      "ref": "pink.800",
+      "use": "Pink text on pink.100 hovered or selected rows (pink.700 measures 4.48 there).",
+      "hex": "#A30F5F"
+    },
+    "text/brand-display": {
+      "ref": "pink.500",
+      "use": "Display text 24px+ (or 19px bold) only. Never body or labels.",
+      "hex": "#EB2590"
+    },
+    "text/accent-strong": {
+      "ref": "pink.800",
+      "use": "Small pink accent text that must reach AAA.",
+      "hex": "#A30F5F"
+    },
+    "text/on-action": {
+      "ref": "neutral.0",
+      "use": "Labels on primary buttons.",
+      "hex": "#FFFFFF"
+    },
+    "text/on-brand-strong": {
+      "ref": "neutral.0",
+      "use": "Text on maroon surfaces.",
+      "hex": "#FFFFFF"
+    },
+    "text/accent-on-brand-strong": {
+      "ref": "pink.200",
+      "use": "Pink accent text on maroon.",
+      "hex": "#F6A2CF"
+    },
+    "text/on-highlight": {
+      "ref": "amber.900",
+      "use": "Text on the yellow eligibility card.",
+      "hex": "#573800"
+    },
+    "text/disabled": {
+      "ref": "neutral.500",
+      "use": "Disabled labels (exempt from WCAG, kept legible anyway).",
+      "hex": "#82717A"
+    },
+    "surface/page": {
+      "ref": "neutral.25",
+      "use": "App background.",
+      "hex": "#FAF9F9"
+    },
+    "surface/raised": {
+      "ref": "neutral.0",
+      "use": "Cards, sheets, inputs.",
+      "hex": "#FFFFFF"
+    },
+    "surface/subtle": {
+      "ref": "neutral.50",
+      "use": "Grouped sections, table stripes.",
+      "hex": "#F5F4F4"
+    },
+    "surface/brand-tint": {
+      "ref": "pink.50",
+      "use": "Loan balance card, brand callouts.",
+      "hex": "#FDE8F3"
+    },
+    "surface/brand-tint-hover": {
+      "ref": "pink.100",
+      "use": "Hovered or selected rows on brand tint.",
+      "hex": "#FBD0E7"
+    },
+    "surface/brand-strong": {
+      "ref": "pink.950",
+      "use": "Maroon hero and presentation surfaces.",
+      "hex": "#5D0936"
+    },
+    "surface/highlight": {
+      "ref": "amber.200",
+      "use": "Yellow eligibility card.",
+      "hex": "#FFE08A"
+    },
+    "action/primary": {
+      "ref": "pink.600",
+      "use": "Primary button fill.",
+      "hex": "#D2137A"
+    },
+    "action/primary-hover": {
+      "ref": "pink.700",
+      "use": "Primary button hover.",
+      "hex": "#BB116D"
+    },
+    "action/primary-pressed": {
+      "ref": "pink.800",
+      "use": "Primary button pressed.",
+      "hex": "#A30F5F"
+    },
+    "action/secondary-hover": {
+      "ref": "pink.50",
+      "use": "Secondary button hover fill.",
+      "hex": "#FDE8F3"
+    },
+    "action/disabled": {
+      "ref": "neutral.100",
+      "use": "Disabled button fill.",
+      "hex": "#E8E5E7"
+    },
+    "action/ink": {
+      "ref": "neutral.900",
+      "use": "Default forward action (Continue, Next) in the loan application. Pink stays for the single commit button.",
+      "hex": "#1F1B1D"
+    },
+    "action/ink-hover": {
+      "ref": "neutral.800",
+      "use": "Ink action hover.",
+      "hex": "#312A2E"
+    },
+    "action/ink-pressed": {
+      "ref": "neutral.700",
+      "use": "Ink action pressed.",
+      "hex": "#463D42"
+    },
+    "border/subtle": {
+      "ref": "neutral.100",
+      "use": "Card outlines, dividers (decorative).",
+      "hex": "#E8E5E7"
+    },
+    "border/control": {
+      "ref": "neutral.500",
+      "use": "Input and checkbox boundaries (3:1 required).",
+      "hex": "#82717A"
+    },
+    "border/brand": {
+      "ref": "pink.500",
+      "use": "Selected state outline, secondary button border.",
+      "hex": "#EB2590"
+    },
+    "border/focus": {
+      "ref": "pink.500",
+      "use": "2px focus ring with 2px offset.",
+      "hex": "#EB2590"
+    },
+    "icon/default": {
+      "ref": "neutral.700",
+      "use": "Standard icons.",
+      "hex": "#463D42"
+    },
+    "icon/brand": {
+      "ref": "pink.500",
+      "use": "Brand icons and illustration strokes.",
+      "hex": "#EB2590"
+    },
+    "status/success-bg": {
+      "ref": "green.50",
+      "use": "Approved and Paid chip and alert background.",
+      "hex": "#E8F6EE"
+    },
+    "status/success-fg": {
+      "ref": "green.700",
+      "use": "Approved and Paid chip and alert text and icon.",
+      "hex": "#136238"
+    },
+    "status/success-solid": {
+      "ref": "green.600",
+      "use": "Success icons and progress fills on white (5.04:1).",
+      "hex": "#1A7F47"
+    },
+    "status/warning-bg": {
+      "ref": "amber.50",
+      "use": "Pending chip and alert background.",
+      "hex": "#FFF6E0"
+    },
+    "status/warning-fg": {
+      "ref": "amber.800",
+      "use": "Pending chip and alert text and icon.",
+      "hex": "#6B4500"
+    },
+    "status/warning-solid": {
+      "ref": "amber.500",
+      "use": "Warning icon fills next to dark text only. Never text: 1.80:1 on white.",
+      "hex": "#F5B70A"
+    },
+    "status/danger-bg": {
+      "ref": "red.50",
+      "use": "Overdue chip and alert background.",
+      "hex": "#FDECEC"
+    },
+    "status/danger-fg": {
+      "ref": "red.700",
+      "use": "Overdue chip and alert text and icon.",
+      "hex": "#9F1F1F"
+    },
+    "status/danger-solid": {
+      "ref": "red.600",
+      "use": "Error text, error icons and error field borders on white (5.62:1).",
+      "hex": "#C62828"
+    },
+    "status/info-bg": {
+      "ref": "blue.50",
+      "use": "In review chip and alert background.",
+      "hex": "#EAF2FD"
+    },
+    "status/info-fg": {
+      "ref": "blue.700",
+      "use": "In review chip and alert text and icon.",
+      "hex": "#184C99"
+    },
+    "status/info-solid": {
+      "ref": "blue.600",
+      "use": "Info icons on white (6.09:1).",
+      "hex": "#1F5FBF"
+    },
+    "status/neutral-bg": {
+      "ref": "neutral.100",
+      "use": "Declined chip background.",
+      "hex": "#E8E5E7"
+    },
+    "status/neutral-fg": {
+      "ref": "neutral.700",
+      "use": "Declined chip text and icon.",
+      "hex": "#463D42"
+    },
+    "status/brand-bg": {
+      "ref": "pink.50",
+      "use": "Disbursed chip background.",
+      "hex": "#FDE8F3"
+    },
+    "status/brand-fg": {
+      "ref": "pink.700",
+      "use": "Disbursed chip text and icon.",
+      "hex": "#BB116D"
+    }
+  },
+  "pairings": [
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary",
+      "min": 4.5,
+      "where": "Primary button label",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#D2137A",
+      "ratio": 5.1,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary-hover",
+      "min": 4.5,
+      "where": "Primary button label, hover",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#BB116D",
+      "ratio": 6.15,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary-pressed",
+      "min": 4.5,
+      "where": "Primary button label, pressed",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#A30F5F",
+      "ratio": 7.52,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/link",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Link on white; secondary button label",
+      "fgHex": "#D2137A",
+      "bgHex": "#FFFFFF",
+      "ratio": 5.1,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/link",
+      "bg": "surface/page",
+      "min": 4.5,
+      "where": "Link on page background",
+      "fgHex": "#D2137A",
+      "bgHex": "#FAF9F9",
+      "ratio": 4.86,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/link-on-tint",
+      "bg": "surface/brand-tint",
+      "min": 4.5,
+      "where": "Pink text on balance card",
+      "fgHex": "#BB116D",
+      "bgHex": "#FDE8F3",
+      "ratio": 5.28,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/link-on-tint-hover",
+      "bg": "surface/brand-tint-hover",
+      "min": 4.5,
+      "where": "Pink text on selected row",
+      "fgHex": "#A30F5F",
+      "bgHex": "#FBD0E7",
+      "ratio": 5.47,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/link-on-tint",
+      "bg": "action/secondary-hover",
+      "min": 4.5,
+      "where": "Secondary button label, hover",
+      "fgHex": "#BB116D",
+      "bgHex": "#FDE8F3",
+      "ratio": 5.28,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/accent-strong",
+      "bg": "surface/raised",
+      "min": 7.0,
+      "where": "AAA pink accent text",
+      "fgHex": "#A30F5F",
+      "bgHex": "#FFFFFF",
+      "ratio": 7.52,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/brand-display",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Large display text in brand pink",
+      "fgHex": "#EB2590",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/raised",
+      "min": 7.0,
+      "where": "Body text",
+      "fgHex": "#1F1B1D",
+      "bgHex": "#FFFFFF",
+      "ratio": 17.03,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/brand-tint",
+      "min": 7.0,
+      "where": "Amounts on balance card",
+      "fgHex": "#1F1B1D",
+      "bgHex": "#FDE8F3",
+      "ratio": 14.61,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/highlight",
+      "min": 7.0,
+      "where": "Heading on eligibility card",
+      "fgHex": "#1F1B1D",
+      "bgHex": "#FFE08A",
+      "ratio": 13.21,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Supporting text",
+      "fgHex": "#5E5158",
+      "bgHex": "#FFFFFF",
+      "ratio": 7.52,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/subtle",
+      "min": 4.5,
+      "where": "Supporting text, grouped section",
+      "fgHex": "#5E5158",
+      "bgHex": "#F5F4F4",
+      "ratio": 6.85,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/brand-tint",
+      "min": 4.5,
+      "where": "Supporting text on balance card",
+      "fgHex": "#5E5158",
+      "bgHex": "#FDE8F3",
+      "ratio": 6.45,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/placeholder",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Input placeholder",
+      "fgHex": "#82717A",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.57,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-highlight",
+      "bg": "surface/highlight",
+      "min": 4.5,
+      "where": "Eligibility card body (replaces amber text)",
+      "fgHex": "#573800",
+      "bgHex": "#FFE08A",
+      "ratio": 8.26,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-brand-strong",
+      "bg": "surface/brand-strong",
+      "min": 7.0,
+      "where": "Text on maroon",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#5D0936",
+      "ratio": 13.48,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/accent-on-brand-strong",
+      "bg": "surface/brand-strong",
+      "min": 4.5,
+      "where": "Pink accent on maroon",
+      "fgHex": "#F6A2CF",
+      "bgHex": "#5D0936",
+      "ratio": 7.05,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Input border on white",
+      "fgHex": "#82717A",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.57,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/subtle",
+      "min": 3.0,
+      "where": "Input border on grouped section",
+      "fgHex": "#82717A",
+      "bgHex": "#F5F4F4",
+      "ratio": 4.17,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Input border on brand tint",
+      "fgHex": "#82717A",
+      "bgHex": "#FDE8F3",
+      "ratio": 3.92,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Focus ring on white",
+      "fgHex": "#EB2590",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Focus ring on brand tint",
+      "fgHex": "#EB2590",
+      "bgHex": "#FDE8F3",
+      "ratio": 3.46,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/brand",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Selected outline, secondary button border",
+      "fgHex": "#EB2590",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "icon/brand",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Brand icon on white",
+      "fgHex": "#EB2590",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "icon/default",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Icon on white",
+      "fgHex": "#463D42",
+      "bgHex": "#FFFFFF",
+      "ratio": 10.47,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "status/success-fg",
+      "bg": "status/success-bg",
+      "min": 4.5,
+      "where": "Approved, Paid chips",
+      "fgHex": "#136238",
+      "bgHex": "#E8F6EE",
+      "ratio": 6.66,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "status/warning-fg",
+      "bg": "status/warning-bg",
+      "min": 4.5,
+      "where": "Pending chip",
+      "fgHex": "#6B4500",
+      "bgHex": "#FFF6E0",
+      "ratio": 7.88,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "status/danger-fg",
+      "bg": "status/danger-bg",
+      "min": 4.5,
+      "where": "Overdue chip",
+      "fgHex": "#9F1F1F",
+      "bgHex": "#FDECEC",
+      "ratio": 6.84,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "status/info-fg",
+      "bg": "status/info-bg",
+      "min": 4.5,
+      "where": "In review chip",
+      "fgHex": "#184C99",
+      "bgHex": "#EAF2FD",
+      "ratio": 7.35,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "status/neutral-fg",
+      "bg": "status/neutral-bg",
+      "min": 4.5,
+      "where": "Declined chip",
+      "fgHex": "#463D42",
+      "bgHex": "#E8E5E7",
+      "ratio": 8.37,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "status/brand-fg",
+      "bg": "status/brand-bg",
+      "min": 4.5,
+      "where": "Disbursed chip",
+      "fgHex": "#BB116D",
+      "bgHex": "#FDE8F3",
+      "ratio": 5.28,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "status/success-solid",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Success icon / progress fill",
+      "fgHex": "#1A7F47",
+      "bgHex": "#FFFFFF",
+      "ratio": 5.04,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "status/danger-solid",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Error message text and icon",
+      "fgHex": "#C62828",
+      "bgHex": "#FFFFFF",
+      "ratio": 5.62,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink",
+      "min": 4.5,
+      "where": "Ink button label (Continue, Next)",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#1F1B1D",
+      "ratio": 17.03,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink-hover",
+      "min": 4.5,
+      "where": "Ink button label, hover",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#312A2E",
+      "ratio": 13.99,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink-pressed",
+      "min": 4.5,
+      "where": "Ink button label, pressed",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#463D42",
+      "ratio": 10.47,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "action/ink",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Selected chip, radio dot and checkbox boundary",
+      "fgHex": "#1F1B1D",
+      "bgHex": "#FFFFFF",
+      "ratio": 17.03,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/page",
+      "min": 7.0,
+      "where": "Headings and body on the page background",
+      "fgHex": "#1F1B1D",
+      "bgHex": "#FAF9F9",
+      "ratio": 16.21,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/page",
+      "min": 4.5,
+      "where": "Supporting text on the page background",
+      "fgHex": "#5E5158",
+      "bgHex": "#FAF9F9",
+      "ratio": 7.15,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/page",
+      "min": 3.0,
+      "where": "Unselected chip outline on the page background",
+      "fgHex": "#82717A",
+      "bgHex": "#FAF9F9",
+      "ratio": 4.35,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/brand",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Selected radio card outline on its tint",
+      "fgHex": "#EB2590",
+      "bgHex": "#FDE8F3",
+      "ratio": 3.46,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/page",
+      "min": 3.0,
+      "where": "Focus ring on the page background",
+      "fgHex": "#EB2590",
+      "bgHex": "#FAF9F9",
+      "ratio": 3.84,
+      "verdict": "AA large text and UI only",
+      "pass": true
+    },
+    {
+      "fg": "status/danger-fg",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Field error message",
+      "fgHex": "#9F1F1F",
+      "bgHex": "#FFFFFF",
+      "ratio": 7.81,
+      "verdict": "AAA text",
+      "pass": true
+    },
+    {
+      "fg": "status/danger-solid",
+      "bg": "status/danger-bg",
+      "min": 3.0,
+      "where": "Error border on an interrupted upload",
+      "fgHex": "#C62828",
+      "bgHex": "#FDECEC",
+      "ratio": 4.92,
+      "verdict": "AA text",
+      "pass": true
+    },
+    {
+      "fg": "status/success-fg",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Saved / uploaded icon",
+      "fgHex": "#136238",
+      "bgHex": "#FFFFFF",
+      "ratio": 7.42,
+      "verdict": "AAA text",
+      "pass": true
+    }
+  ],
+  "forbidden": [
+    {
+      "fg": "pink.500",
+      "bg": "neutral.0",
+      "why": "4.04:1. Fails AA for normal text such as button labels and links.",
+      "fgHex": "#EB2590",
+      "bgHex": "#FFFFFF",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only"
+    },
+    {
+      "fg": "neutral.0",
+      "bg": "pink.500",
+      "why": "4.04:1. White labels on brand pink fail AA for normal text.",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#EB2590",
+      "ratio": 4.04,
+      "verdict": "AA large text and UI only"
+    },
+    {
+      "fg": "pink.500",
+      "bg": "pink.50",
+      "why": "3.46:1. Brand pink text on the tint fails AA.",
+      "fgHex": "#EB2590",
+      "bgHex": "#FDE8F3",
+      "ratio": 3.46,
+      "verdict": "AA large text and UI only"
+    },
+    {
+      "fg": "pink.600",
+      "bg": "pink.50",
+      "why": "4.38:1. Action pink text on the tint just misses AA; use pink.700.",
+      "fgHex": "#D2137A",
+      "bgHex": "#FDE8F3",
+      "ratio": 4.38,
+      "verdict": "AA large text and UI only"
+    },
+    {
+      "fg": "pink.700",
+      "bg": "pink.100",
+      "why": "4.48:1. Misses AA by a hair on the selected-row tint; use pink.800.",
+      "fgHex": "#BB116D",
+      "bgHex": "#FBD0E7",
+      "ratio": 4.48,
+      "verdict": "AA large text and UI only"
+    },
+    {
+      "fg": "neutral.0",
+      "bg": "pink.200",
+      "why": "Tints 200-400 are decorative only; nothing readable sits on or in them.",
+      "fgHex": "#FFFFFF",
+      "bgHex": "#F6A2CF",
+      "ratio": 1.91,
+      "verdict": "Fails"
+    },
+    {
+      "fg": "neutral.400",
+      "bg": "pink.50",
+      "why": "2.58:1 on pink tint (2.73 on surface/subtle). Fails the 3:1 control-border minimum off white; use border/control.",
+      "fgHex": "#9F9199",
+      "bgHex": "#FDE8F3",
+      "ratio": 2.58,
+      "verdict": "Fails"
+    }
+  ],
+  "scale": {
+    "pink": [
+      {
+        "step": "50",
+        "hex": "#FDE8F3",
+        "note": "Case study Tint 50. Backgrounds, cards.",
+        "white": 1.17,
+        "black": 18.01,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "100",
+        "hex": "#FBD0E7",
+        "note": "Case study Tint 100. Hover backgrounds, selected rows.",
+        "white": 1.37,
+        "black": 15.28,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#F6A2CF",
+        "note": "Case study Tint 300. Decorative only; text on maroon.",
+        "white": 1.91,
+        "black": 10.99,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "300",
+        "hex": "#F273B8",
+        "note": "Decorative only (illustration, charts).",
+        "white": 2.65,
+        "black": 7.92,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "400",
+        "hex": "#EE44A0",
+        "note": "Decorative only.",
+        "white": 3.52,
+        "black": 5.97,
+        "whiteVerdict": "AA large text and UI only",
+        "blackVerdict": "AA text"
+      },
+      {
+        "step": "500",
+        "hex": "#EB2590",
+        "note": "Brand. shecluded.com theme-color. Large text, icons, illustration, focus rings, component boundaries.",
+        "white": 4.04,
+        "black": 5.2,
+        "whiteVerdict": "AA large text and UI only",
+        "blackVerdict": "AA text"
+      },
+      {
+        "step": "600",
+        "hex": "#D2137A",
+        "note": "Action. Buttons with white labels, links on white.",
+        "white": 5.1,
+        "black": 4.11,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "700",
+        "hex": "#BB116D",
+        "note": "Action dark. Pink text on pink tints; primary hover.",
+        "white": 6.15,
+        "black": 3.41,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "800",
+        "hex": "#A30F5F",
+        "note": "Deep. AAA accent text; primary pressed.",
+        "white": 7.52,
+        "black": 2.79,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "900",
+        "hex": "#8C0D52",
+        "note": "Deep accents.",
+        "white": 9.15,
+        "black": 2.29,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "950",
+        "hex": "#5D0936",
+        "note": "Maroon. Brand-strong surfaces (hero, presentation).",
+        "white": 13.48,
+        "black": 1.56,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ],
+    "neutral": [
+      {
+        "step": "0",
+        "hex": "#FFFFFF",
+        "note": "",
+        "white": 1.0,
+        "black": 21.0,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "25",
+        "hex": "#FAF9F9",
+        "note": "",
+        "white": 1.05,
+        "black": 19.98,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "50",
+        "hex": "#F5F4F4",
+        "note": "",
+        "white": 1.1,
+        "black": 19.13,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "100",
+        "hex": "#E8E5E7",
+        "note": "",
+        "white": 1.25,
+        "black": 16.79,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#D7D1D4",
+        "note": "",
+        "white": 1.5,
+        "black": 13.96,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "300",
+        "hex": "#BCB2B7",
+        "note": "",
+        "white": 2.06,
+        "black": 10.19,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "400",
+        "hex": "#9F9199",
+        "note": "",
+        "white": 3.01,
+        "black": 6.98,
+        "whiteVerdict": "AA large text and UI only",
+        "blackVerdict": "AA text"
+      },
+      {
+        "step": "500",
+        "hex": "#82717A",
+        "note": "Lightest neutral that passes 3:1 as a control border on every light surface.",
+        "white": 4.57,
+        "black": 4.59,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA text"
+      },
+      {
+        "step": "600",
+        "hex": "#5E5158",
+        "note": "",
+        "white": 7.52,
+        "black": 2.79,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "700",
+        "hex": "#463D42",
+        "note": "",
+        "white": 10.47,
+        "black": 2.01,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "800",
+        "hex": "#312A2E",
+        "note": "",
+        "white": 13.99,
+        "black": 1.5,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "900",
+        "hex": "#1F1B1D",
+        "note": "",
+        "white": 17.03,
+        "black": 1.23,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ],
+    "green": [
+      {
+        "step": "50",
+        "hex": "#E8F6EE",
+        "note": "",
+        "white": 1.11,
+        "black": 18.85,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#A8DDBE",
+        "note": "",
+        "white": 1.53,
+        "black": 13.75,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "600",
+        "hex": "#1A7F47",
+        "note": "",
+        "white": 5.04,
+        "black": 4.17,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "700",
+        "hex": "#136238",
+        "note": "",
+        "white": 7.42,
+        "black": 2.83,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ],
+    "amber": [
+      {
+        "step": "50",
+        "hex": "#FFF6E0",
+        "note": "",
+        "white": 1.08,
+        "black": 19.51,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#FFE08A",
+        "note": "Eligibility card yellow.",
+        "white": 1.29,
+        "black": 16.28,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "300",
+        "hex": "#FCD34D",
+        "note": "",
+        "white": 1.44,
+        "black": 14.56,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "500",
+        "hex": "#F5B70A",
+        "note": "",
+        "white": 1.8,
+        "black": 11.66,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "700",
+        "hex": "#8A5A00",
+        "note": "",
+        "white": 5.93,
+        "black": 3.54,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "800",
+        "hex": "#6B4500",
+        "note": "",
+        "white": 8.48,
+        "black": 2.48,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      },
+      {
+        "step": "900",
+        "hex": "#573800",
+        "note": "",
+        "white": 10.65,
+        "black": 1.97,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ],
+    "red": [
+      {
+        "step": "50",
+        "hex": "#FDECEC",
+        "note": "",
+        "white": 1.14,
+        "black": 18.39,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#F5B5B5",
+        "note": "",
+        "white": 1.73,
+        "black": 12.16,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "600",
+        "hex": "#C62828",
+        "note": "",
+        "white": 5.62,
+        "black": 3.74,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "700",
+        "hex": "#9F1F1F",
+        "note": "",
+        "white": 7.81,
+        "black": 2.69,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ],
+    "blue": [
+      {
+        "step": "50",
+        "hex": "#EAF2FD",
+        "note": "",
+        "white": 1.13,
+        "black": 18.62,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "200",
+        "hex": "#B3CEF5",
+        "note": "",
+        "white": 1.61,
+        "black": 13.06,
+        "whiteVerdict": "Fails",
+        "blackVerdict": "AAA text"
+      },
+      {
+        "step": "600",
+        "hex": "#1F5FBF",
+        "note": "",
+        "white": 6.09,
+        "black": 3.45,
+        "whiteVerdict": "AA text",
+        "blackVerdict": "AA large text and UI only"
+      },
+      {
+        "step": "700",
+        "hex": "#184C99",
+        "note": "",
+        "white": 8.29,
+        "black": 2.53,
+        "whiteVerdict": "AAA text",
+        "blackVerdict": "Fails"
+      }
+    ]
+  }
+}

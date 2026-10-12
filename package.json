@@ -1,0 +1,31 @@
+{
+  "name": "shecluded-color-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p . && vite build && node scripts/to-artifact.mjs",
+    "preview": "vite preview",
+    "sync": "node scripts/sync-vendor.mjs"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "5.1.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.525.0",
+    "motion": "12.23.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hook-form": "7.60.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.11",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "@vitejs/plugin-react": "4.6.0",
+    "tailwindcss": "4.1.11",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  }
+}
