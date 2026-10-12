@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { FlaskConical, X } from "lucide-react";
 import { ApplicationProvider, useApplication } from "./lib/store";
@@ -35,10 +35,15 @@ function Screen() {
 function PrototypeControls() {
   const { weakNetwork, setWeakNetwork } = useApplication();
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const onOpen = () => setOpen(true);
+    window.addEventListener("prototype:open", onOpen);
+    return () => window.removeEventListener("prototype:open", onOpen);
+  }, []);
   return (
-    <div className="fixed bottom-4 left-4 z-[var(--z-dialog)] max-lg:bottom-[140px] max-lg:left-auto max-lg:right-3">
+    <div className={clsx("fixed bottom-4 left-4 z-[var(--z-dialog)] max-lg:bottom-[132px] max-lg:left-3 max-lg:right-3", !open && "max-lg:hidden")}>
       {open ? (
-        <div className="w-64 rounded-md border border-line bg-raised p-4 shadow-float">
+        <div className="w-64 rounded-md border border-line bg-raised p-4 shadow-float max-lg:w-auto">
           <div className="flex items-center justify-between">
             <p className="text-eyebrow text-fg-muted">Prototype controls</p>
             <button type="button" aria-label="Close prototype controls" onClick={() => setOpen(false)} className="rounded-sm p-1 hover:bg-subtle">

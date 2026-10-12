@@ -57,8 +57,8 @@ export function ReviewStep() {
         onBack={() => go("documents")}
         actions={
           <>
-            <Button variant="ghost" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("documents")}>
-              Back
+            <Button variant="ghost" aria-label="Back" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("documents")}>
+              <span className="max-sm:sr-only">Back</span>
             </Button>
             <Button type="submit" iconRight={<ArrowRight aria-hidden className="size-4" />} className="max-lg:flex-1">
               Looks right, continue
@@ -108,7 +108,7 @@ export function ReviewStep() {
                       {DOC_LABEL[k]}
                       {k === "id" && ` · ${labelOf(ID_TYPES, app.documents.idType)}`}
                     </span>
-                    <span className="truncate text-caption text-fg-muted">{f?.name}</span>
+                    <span className="truncate text-caption text-fg-muted" title={f?.name}>{f?.name}</span>
                   </span>
                   <span className="sr-only">Uploaded</span>
                 </li>

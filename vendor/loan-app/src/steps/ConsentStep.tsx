@@ -34,8 +34,8 @@ export function ConsentStep() {
         onBack={() => go("review")}
         actions={
           <>
-            <Button variant="ghost" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("review")}>
-              Back
+            <Button variant="ghost" aria-label="Back" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("review")}>
+              <span className="max-sm:sr-only">Back</span>
             </Button>
             <Button type="submit" variant="brand" loading={submitting} className="max-lg:flex-1">
               {submitting ? "Submitting…" : "Submit application"}
@@ -43,15 +43,15 @@ export function ConsentStep() {
           </>
         }
       >
-        <div className="grid grid-cols-3 divide-x divide-line rounded-md border border-line bg-raised">
+        <div className="grid grid-cols-3 divide-x divide-line rounded-md border border-line bg-raised max-[400px]:grid-cols-1 max-[400px]:divide-x-0 max-[400px]:divide-y">
           {[
             ["Amount", formatNaira(loan.amount)],
             [loan.frequency === "monthly" ? "Monthly" : "Every 2 weeks", formatNaira(quote.perInstallment)],
             ["Term", `${loan.durationMonths} months`],
           ].map(([k, v]) => (
-            <div key={k} className="px-3 py-3 sm:px-4">
+            <div key={k} className="px-3 py-3 sm:px-4 max-[400px]:flex max-[400px]:items-baseline max-[400px]:justify-between max-[400px]:gap-3 max-[400px]:py-2.5">
               <p className="text-caption text-fg-muted">{k}</p>
-              <p className="mt-0.5 font-semibold text-fg tabular">{v}</p>
+              <p className="mt-0.5 font-semibold text-fg tabular max-[400px]:mt-0">{v}</p>
             </div>
           ))}
         </div>

@@ -175,7 +175,7 @@ export function UploadTile({ docKey, missing }: { docKey: DocKey; missing: boole
                 )}
               </span>
               <div className="min-w-0 flex-1">
-                <p className="truncate font-medium text-fg">{doc.name}</p>
+                <p className="truncate font-medium text-fg" title={doc.name}>{doc.name}</p>
                 <p className="text-small text-fg-muted tabular">
                   {formatBytes(doc.sizeBytes)}
                   {doc.status === "uploading" && ` · Uploading ${Math.round(doc.progress)}%`}
@@ -272,8 +272,8 @@ export function DocumentsStep() {
         actions={
           <>
             {!editing && (
-              <Button variant="ghost" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("loan")}>
-                Back
+              <Button variant="ghost" aria-label="Back" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("loan")}>
+                <span className="max-sm:sr-only">Back</span>
               </Button>
             )}
             <Button type="submit" iconRight={<ArrowRight aria-hidden className="size-4" />} className="max-lg:flex-1" disabled={uploading}>

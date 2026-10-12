@@ -25,7 +25,7 @@ export function Overview() {
 
       {/* Hero: the problem and the answer in one specimen */}
       <Specimen white label={<span className="eyebrow">One hue, eleven steps, each with a job</span>}>
-        <div className="grid gap-1.5" style={{ gridTemplateColumns: `repeat(${pink.length}, minmax(0, 1fr))` }}>
+        <div className="scale-grid grid gap-1.5" style={{ ["--steps" as string]: pink.length }}>
           {pink.map((s) => (
             <div key={s.step} className="flex flex-col gap-1.5">
               <div
@@ -60,7 +60,7 @@ export function Overview() {
         </div>
       </Specimen>
 
-      <div className="grid-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
+      <div className="grid-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
         {[
           [`${PAIRINGS.filter((p) => p.pass).length}/${PAIRINGS.length}`, "allowed pairings pass, measured at build time"],
           [String(FORBIDDEN.length), "forbidden pairings, confirmed to fail AA"],

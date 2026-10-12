@@ -93,7 +93,7 @@ export function Row({ label, children, strong }: { label: string; children: Reac
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-line py-3 last:border-b-0">
       <dt className="text-small text-fg-muted">{label}</dt>
-      <dd className={clsx("text-right tabular", strong ? "font-semibold text-fg" : "text-fg")}>{children}</dd>
+      <dd className={clsx("text-right tabular [text-wrap:balance]", strong ? "font-semibold text-fg" : "text-fg")}>{children}</dd>
     </div>
   );
 }

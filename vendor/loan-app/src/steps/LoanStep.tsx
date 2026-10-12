@@ -67,8 +67,8 @@ export function LoanStep() {
         actions={
           <>
             {!editing && (
-              <Button variant="ghost" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("business")}>
-                Back
+              <Button variant="ghost" aria-label="Back" iconLeft={<ArrowLeft aria-hidden className="size-4" />} onClick={() => go("business")}>
+                <span className="max-sm:sr-only">Back</span>
               </Button>
             )}
             <Button type="submit" iconRight={<ArrowRight aria-hidden className="size-4" />} className="max-lg:flex-1">

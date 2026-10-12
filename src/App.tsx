@@ -73,6 +73,19 @@ export function App() {
     setOpen(false);
   }, [id, route.label]);
 
+  // Phone menu: lock the page behind the drawer and close it with Escape.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
     <ApplicationProvider>
       <SimulationFilters />

@@ -83,17 +83,28 @@ export function BeforeAfter() {
   );
 }
 
-function Marker({ n, children }: { n: number; children: ReactNode }) {
+/** Numbered annotation. `inline` puts the number beside small elements (badges, chips) instead of over their corner. */
+function Marker({ n, children, inline }: { n: number; children: ReactNode; inline?: boolean }) {
+  const dot = (
+    <span
+      aria-hidden
+      className="grid size-6 shrink-0 place-items-center rounded-full text-[12px] font-semibold tnum"
+      style={{ background: "#1F1B1D", color: "#FFFFFF", boxShadow: "0 0 0 2px #FFFFFF" }}
+    >
+      {n}
+    </span>
+  );
+  if (inline)
+    return (
+      <span className="inline-flex items-center gap-1.5">
+        {children}
+        {dot}
+      </span>
+    );
   return (
     <div className="relative">
       {children}
-      <span
-        aria-hidden
-        className="absolute -right-2.5 -top-2.5 grid size-6 place-items-center rounded-full text-[12px] font-semibold tnum"
-        style={{ background: "#1F1B1D", color: "#FFFFFF", boxShadow: "0 0 0 2px #FFFFFF" }}
-      >
-        {n}
-      </span>
+      <span className="absolute -right-2.5 -top-2.5">{dot}</span>
     </div>
   );
 }
@@ -118,7 +129,7 @@ export function Annotated() {
         title="Annotated screen"
         intro="The loan step of the application, built from the live components. Each numbered pairing shows its token and measured contrast."
       />
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)]">
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,560px)_minmax(0,1fr)]">
         <Specimen>
           <div className="flex flex-col gap-5">
             <div>
@@ -147,7 +158,7 @@ export function Annotated() {
                   value={purpose}
                   onChange={setPurpose}
                   options={[
-                    { value: "equipment", label: "Buy equipment", description: "Machines, tools, a vehicle or a freezer", badge: <Marker n={5}><Badge tone="brand">Suggested</Badge></Marker> },
+                    { value: "equipment", label: "Buy equipment", description: "Machines, tools, a vehicle or a freezer", badge: <Marker n={5} inline><Badge tone="brand">Suggested</Badge></Marker> },
                     { value: "inventory", label: "Buy stock", description: "Restock goods or raw materials" },
                   ]}
                 />
@@ -163,8 +174,8 @@ export function Annotated() {
                 </dl>
               </Marker>
             </Card>
-            <div className="flex items-center justify-between gap-3">
-              <Marker n={7}>
+            <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-5">
+              <Marker n={7} inline>
                 <StatusChip status="in_review" />
               </Marker>
               <Marker n={8}>

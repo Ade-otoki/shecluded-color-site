@@ -10,7 +10,7 @@ import { Eyebrow } from "../ui/Surface";
 
 /** Official Shecluded logo (from shecluded.com/logo.svg). Keep its 112:18 ratio; never recolor. */
 export function Logo({ className }: { className?: string }) {
-  return <img src={logoUrl} alt="Shecluded" width={137} height={22} className={clsx("h-[22px] w-auto", className)} />;
+  return <img src={logoUrl} alt="Shecluded" width={137} height={22} className={clsx("h-[22px] w-auto max-[360px]:h-[18px]", className)} />;
 }
 
 /** Top bar: Back · logo · Save and exit (Origin pattern). */
@@ -29,7 +29,7 @@ export function AppHeader({ onBack, showSave = true }: { onBack?: () => void; sh
         <Logo />
         <div className="flex justify-end">
           {showSave && (
-            <Button variant="outline" size="sm" iconRight={<X aria-hidden className="size-4" />} onClick={saveAndExit}>
+            <Button variant="outline" size="sm" className="max-[360px]:gap-1 max-[360px]:px-2.5" iconRight={<X aria-hidden className="size-4" />} onClick={saveAndExit}>
               <span>
                 Save<span className="max-sm:hidden"> and exit</span>
               </span>
@@ -229,11 +229,27 @@ export function StepLayout({
             )}
           >
             <div className="mx-auto flex max-w-[var(--layout-content-max)] items-center justify-between gap-3">{actions}</div>
-            <SaveIndicator className="mt-2 justify-center lg:hidden" />
+            <div className="mt-2 flex items-center justify-center gap-3 lg:hidden">
+              <SaveIndicator />
+              <PrototypeTrigger />
+            </div>
           </div>
         </main>
       </div>
     </>
+  );
+}
+
+/** Phone-only entry to the demo controls, so they never float over the form. Opens the panel rendered in App. */
+export function PrototypeTrigger({ className }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => window.dispatchEvent(new Event("prototype:open"))}
+      className={clsx("rounded-sm px-1 text-caption text-fg-muted underline decoration-line-control underline-offset-4 hover:text-fg", className)}
+    >
+      Prototype
+    </button>
   );
 }
 

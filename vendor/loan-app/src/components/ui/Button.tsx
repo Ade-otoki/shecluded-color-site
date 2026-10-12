@@ -39,7 +39,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       disabled={isDisabled}
       aria-busy={loading || undefined}
       className={clsx(
-        "inline-flex select-none items-center justify-center whitespace-nowrap rounded-md font-medium",
+        "inline-flex min-w-0 select-none items-center justify-center whitespace-nowrap rounded-md font-medium",
         "transition-[background-color,transform] duration-150 active:scale-[0.98]",
         "disabled:pointer-events-none disabled:bg-disabled disabled:text-fg-disabled disabled:border-transparent",
         variants[variant],
@@ -49,8 +49,8 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       )}
       {...rest}
     >
-      {loading ? <LoaderCircle aria-hidden className="size-4 animate-spin" /> : iconLeft}
-      {children}
+      {loading ? <LoaderCircle aria-hidden className="size-4 shrink-0 animate-spin" /> : iconLeft}
+      {typeof children === "string" ? <span className="truncate">{children}</span> : children}
       {!loading && iconRight}
     </button>
   );
