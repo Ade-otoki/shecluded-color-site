@@ -1,0 +1,685 @@
+{
+  "$description": "Shecluded color system source of truth. Primitives are raw tones; semantic tokens give each tone a job; pairings are the foreground/background combinations the system allows, each with the WCAG 2.1 threshold it must meet. Run build_tokens.py to validate and regenerate outputs.",
+  "primitives": {
+    "pink": {
+      "50": {
+        "hex": "#FDE8F3",
+        "note": "Case study Tint 50. Backgrounds, cards."
+      },
+      "100": {
+        "hex": "#FBD0E7",
+        "note": "Case study Tint 100. Hover backgrounds, selected rows."
+      },
+      "200": {
+        "hex": "#F6A2CF",
+        "note": "Case study Tint 300. Decorative only; text on maroon."
+      },
+      "300": {
+        "hex": "#F273B8",
+        "note": "Decorative only (illustration, charts)."
+      },
+      "400": {
+        "hex": "#EE44A0",
+        "note": "Decorative only."
+      },
+      "500": {
+        "hex": "#EB2590",
+        "note": "Brand. shecluded.com theme-color. Large text, icons, illustration, focus rings, component boundaries."
+      },
+      "600": {
+        "hex": "#D2137A",
+        "note": "Action. Buttons with white labels, links on white."
+      },
+      "700": {
+        "hex": "#BB116D",
+        "note": "Action dark. Pink text on pink tints; primary hover."
+      },
+      "800": {
+        "hex": "#A30F5F",
+        "note": "Deep. AAA accent text; primary pressed."
+      },
+      "900": {
+        "hex": "#8C0D52",
+        "note": "Deep accents."
+      },
+      "950": {
+        "hex": "#5D0936",
+        "note": "Maroon. Brand-strong surfaces (hero, presentation)."
+      }
+    },
+    "neutral": {
+      "0": {
+        "hex": "#FFFFFF"
+      },
+      "25": {
+        "hex": "#FAF9F9"
+      },
+      "50": {
+        "hex": "#F5F4F4"
+      },
+      "100": {
+        "hex": "#E8E5E7"
+      },
+      "200": {
+        "hex": "#D7D1D4"
+      },
+      "300": {
+        "hex": "#BCB2B7"
+      },
+      "400": {
+        "hex": "#9F9199"
+      },
+      "500": {
+        "hex": "#82717A",
+        "note": "Lightest neutral that passes 3:1 as a control border on every light surface."
+      },
+      "600": {
+        "hex": "#5E5158"
+      },
+      "700": {
+        "hex": "#463D42"
+      },
+      "800": {
+        "hex": "#312A2E"
+      },
+      "900": {
+        "hex": "#1F1B1D"
+      }
+    },
+    "green": {
+      "50": {
+        "hex": "#E8F6EE"
+      },
+      "200": {
+        "hex": "#A8DDBE"
+      },
+      "600": {
+        "hex": "#1A7F47"
+      },
+      "700": {
+        "hex": "#136238"
+      }
+    },
+    "amber": {
+      "50": {
+        "hex": "#FFF6E0"
+      },
+      "200": {
+        "hex": "#FFE08A",
+        "note": "Eligibility card yellow."
+      },
+      "300": {
+        "hex": "#FCD34D"
+      },
+      "500": {
+        "hex": "#F5B70A"
+      },
+      "700": {
+        "hex": "#8A5A00"
+      },
+      "800": {
+        "hex": "#6B4500"
+      },
+      "900": {
+        "hex": "#573800"
+      }
+    },
+    "red": {
+      "50": {
+        "hex": "#FDECEC"
+      },
+      "200": {
+        "hex": "#F5B5B5"
+      },
+      "600": {
+        "hex": "#C62828"
+      },
+      "700": {
+        "hex": "#9F1F1F"
+      }
+    },
+    "blue": {
+      "50": {
+        "hex": "#EAF2FD"
+      },
+      "200": {
+        "hex": "#B3CEF5"
+      },
+      "600": {
+        "hex": "#1F5FBF"
+      },
+      "700": {
+        "hex": "#184C99"
+      }
+    }
+  },
+  "semantic": {
+    "text/primary": {
+      "ref": "neutral.900",
+      "use": "Body copy, headings, amounts."
+    },
+    "text/secondary": {
+      "ref": "neutral.600",
+      "use": "Supporting copy, labels, meta. Passes AA on every light surface."
+    },
+    "text/placeholder": {
+      "ref": "neutral.500",
+      "use": "Placeholder and hint text on white only."
+    },
+    "text/link": {
+      "ref": "pink.600",
+      "use": "Links on white and neutral surfaces."
+    },
+    "text/link-on-tint": {
+      "ref": "pink.700",
+      "use": "Pink text and links on pink tint surfaces."
+    },
+    "text/link-on-tint-hover": {
+      "ref": "pink.800",
+      "use": "Pink text on pink.100 hovered or selected rows (pink.700 measures 4.48 there)."
+    },
+    "text/brand-display": {
+      "ref": "pink.500",
+      "use": "Display text 24px+ (or 19px bold) only. Never body or labels."
+    },
+    "text/accent-strong": {
+      "ref": "pink.800",
+      "use": "Small pink accent text that must reach AAA."
+    },
+    "text/on-action": {
+      "ref": "neutral.0",
+      "use": "Labels on primary buttons."
+    },
+    "text/on-brand-strong": {
+      "ref": "neutral.0",
+      "use": "Text on maroon surfaces."
+    },
+    "text/accent-on-brand-strong": {
+      "ref": "pink.200",
+      "use": "Pink accent text on maroon."
+    },
+    "text/on-highlight": {
+      "ref": "amber.900",
+      "use": "Text on the yellow eligibility card."
+    },
+    "text/disabled": {
+      "ref": "neutral.500",
+      "use": "Disabled labels (exempt from WCAG, kept legible anyway)."
+    },
+    "surface/page": {
+      "ref": "neutral.25",
+      "use": "App background."
+    },
+    "surface/raised": {
+      "ref": "neutral.0",
+      "use": "Cards, sheets, inputs."
+    },
+    "surface/subtle": {
+      "ref": "neutral.50",
+      "use": "Grouped sections, table stripes."
+    },
+    "surface/brand-tint": {
+      "ref": "pink.50",
+      "use": "Loan balance card, brand callouts."
+    },
+    "surface/brand-tint-hover": {
+      "ref": "pink.100",
+      "use": "Hovered or selected rows on brand tint."
+    },
+    "surface/brand-strong": {
+      "ref": "pink.950",
+      "use": "Maroon hero and presentation surfaces."
+    },
+    "surface/highlight": {
+      "ref": "amber.200",
+      "use": "Yellow eligibility card."
+    },
+    "action/primary": {
+      "ref": "pink.600",
+      "use": "Primary button fill."
+    },
+    "action/primary-hover": {
+      "ref": "pink.700",
+      "use": "Primary button hover."
+    },
+    "action/primary-pressed": {
+      "ref": "pink.800",
+      "use": "Primary button pressed."
+    },
+    "action/secondary-hover": {
+      "ref": "pink.50",
+      "use": "Secondary button hover fill."
+    },
+    "action/disabled": {
+      "ref": "neutral.100",
+      "use": "Disabled button fill."
+    },
+    "action/ink": {
+      "ref": "neutral.900",
+      "use": "Default forward action (Continue, Next) in the loan application. Pink stays for the single commit button."
+    },
+    "action/ink-hover": {
+      "ref": "neutral.800",
+      "use": "Ink action hover."
+    },
+    "action/ink-pressed": {
+      "ref": "neutral.700",
+      "use": "Ink action pressed."
+    },
+    "border/subtle": {
+      "ref": "neutral.100",
+      "use": "Card outlines, dividers (decorative)."
+    },
+    "border/control": {
+      "ref": "neutral.500",
+      "use": "Input and checkbox boundaries (3:1 required)."
+    },
+    "border/brand": {
+      "ref": "pink.500",
+      "use": "Selected state outline, secondary button border."
+    },
+    "border/focus": {
+      "ref": "pink.500",
+      "use": "2px focus ring with 2px offset."
+    },
+    "icon/default": {
+      "ref": "neutral.700",
+      "use": "Standard icons."
+    },
+    "icon/brand": {
+      "ref": "pink.500",
+      "use": "Brand icons and illustration strokes."
+    },
+    "status/success-bg": {
+      "ref": "green.50",
+      "use": "Approved and Paid chip and alert background."
+    },
+    "status/success-fg": {
+      "ref": "green.700",
+      "use": "Approved and Paid chip and alert text and icon."
+    },
+    "status/success-solid": {
+      "ref": "green.600",
+      "use": "Success icons and progress fills on white (5.04:1)."
+    },
+    "status/warning-bg": {
+      "ref": "amber.50",
+      "use": "Pending chip and alert background."
+    },
+    "status/warning-fg": {
+      "ref": "amber.800",
+      "use": "Pending chip and alert text and icon."
+    },
+    "status/warning-solid": {
+      "ref": "amber.500",
+      "use": "Warning icon fills next to dark text only. Never text: 1.80:1 on white."
+    },
+    "status/danger-bg": {
+      "ref": "red.50",
+      "use": "Overdue chip and alert background."
+    },
+    "status/danger-fg": {
+      "ref": "red.700",
+      "use": "Overdue chip and alert text and icon."
+    },
+    "status/danger-solid": {
+      "ref": "red.600",
+      "use": "Error text, error icons and error field borders on white (5.62:1)."
+    },
+    "status/info-bg": {
+      "ref": "blue.50",
+      "use": "In review chip and alert background."
+    },
+    "status/info-fg": {
+      "ref": "blue.700",
+      "use": "In review chip and alert text and icon."
+    },
+    "status/info-solid": {
+      "ref": "blue.600",
+      "use": "Info icons on white (6.09:1)."
+    },
+    "status/neutral-bg": {
+      "ref": "neutral.100",
+      "use": "Declined chip background."
+    },
+    "status/neutral-fg": {
+      "ref": "neutral.700",
+      "use": "Declined chip text and icon."
+    },
+    "status/brand-bg": {
+      "ref": "pink.50",
+      "use": "Disbursed chip background."
+    },
+    "status/brand-fg": {
+      "ref": "pink.700",
+      "use": "Disbursed chip text and icon."
+    }
+  },
+  "pairings": [
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary",
+      "min": 4.5,
+      "where": "Primary button label"
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary-hover",
+      "min": 4.5,
+      "where": "Primary button label, hover"
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/primary-pressed",
+      "min": 4.5,
+      "where": "Primary button label, pressed"
+    },
+    {
+      "fg": "text/link",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Link on white; secondary button label"
+    },
+    {
+      "fg": "text/link",
+      "bg": "surface/page",
+      "min": 4.5,
+      "where": "Link on page background"
+    },
+    {
+      "fg": "text/link-on-tint",
+      "bg": "surface/brand-tint",
+      "min": 4.5,
+      "where": "Pink text on balance card"
+    },
+    {
+      "fg": "text/link-on-tint-hover",
+      "bg": "surface/brand-tint-hover",
+      "min": 4.5,
+      "where": "Pink text on selected row"
+    },
+    {
+      "fg": "text/link-on-tint",
+      "bg": "action/secondary-hover",
+      "min": 4.5,
+      "where": "Secondary button label, hover"
+    },
+    {
+      "fg": "text/accent-strong",
+      "bg": "surface/raised",
+      "min": 7.0,
+      "where": "AAA pink accent text"
+    },
+    {
+      "fg": "text/brand-display",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Large display text in brand pink"
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/raised",
+      "min": 7.0,
+      "where": "Body text"
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/brand-tint",
+      "min": 7.0,
+      "where": "Amounts on balance card"
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/highlight",
+      "min": 7.0,
+      "where": "Heading on eligibility card"
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Supporting text"
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/subtle",
+      "min": 4.5,
+      "where": "Supporting text, grouped section"
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/brand-tint",
+      "min": 4.5,
+      "where": "Supporting text on balance card"
+    },
+    {
+      "fg": "text/placeholder",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Input placeholder"
+    },
+    {
+      "fg": "text/on-highlight",
+      "bg": "surface/highlight",
+      "min": 4.5,
+      "where": "Eligibility card body (replaces amber text)"
+    },
+    {
+      "fg": "text/on-brand-strong",
+      "bg": "surface/brand-strong",
+      "min": 7.0,
+      "where": "Text on maroon"
+    },
+    {
+      "fg": "text/accent-on-brand-strong",
+      "bg": "surface/brand-strong",
+      "min": 4.5,
+      "where": "Pink accent on maroon"
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Input border on white"
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/subtle",
+      "min": 3.0,
+      "where": "Input border on grouped section"
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Input border on brand tint"
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Focus ring on white"
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Focus ring on brand tint"
+    },
+    {
+      "fg": "border/brand",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Selected outline, secondary button border"
+    },
+    {
+      "fg": "icon/brand",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Brand icon on white"
+    },
+    {
+      "fg": "icon/default",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Icon on white"
+    },
+    {
+      "fg": "status/success-fg",
+      "bg": "status/success-bg",
+      "min": 4.5,
+      "where": "Approved, Paid chips"
+    },
+    {
+      "fg": "status/warning-fg",
+      "bg": "status/warning-bg",
+      "min": 4.5,
+      "where": "Pending chip"
+    },
+    {
+      "fg": "status/danger-fg",
+      "bg": "status/danger-bg",
+      "min": 4.5,
+      "where": "Overdue chip"
+    },
+    {
+      "fg": "status/info-fg",
+      "bg": "status/info-bg",
+      "min": 4.5,
+      "where": "In review chip"
+    },
+    {
+      "fg": "status/neutral-fg",
+      "bg": "status/neutral-bg",
+      "min": 4.5,
+      "where": "Declined chip"
+    },
+    {
+      "fg": "status/brand-fg",
+      "bg": "status/brand-bg",
+      "min": 4.5,
+      "where": "Disbursed chip"
+    },
+    {
+      "fg": "status/success-solid",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Success icon / progress fill"
+    },
+    {
+      "fg": "status/danger-solid",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Error message text and icon"
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink",
+      "min": 4.5,
+      "where": "Ink button label (Continue, Next)"
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink-hover",
+      "min": 4.5,
+      "where": "Ink button label, hover"
+    },
+    {
+      "fg": "text/on-action",
+      "bg": "action/ink-pressed",
+      "min": 4.5,
+      "where": "Ink button label, pressed"
+    },
+    {
+      "fg": "action/ink",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Selected chip, radio dot and checkbox boundary"
+    },
+    {
+      "fg": "text/primary",
+      "bg": "surface/page",
+      "min": 7.0,
+      "where": "Headings and body on the page background"
+    },
+    {
+      "fg": "text/secondary",
+      "bg": "surface/page",
+      "min": 4.5,
+      "where": "Supporting text on the page background"
+    },
+    {
+      "fg": "border/control",
+      "bg": "surface/page",
+      "min": 3.0,
+      "where": "Unselected chip outline on the page background"
+    },
+    {
+      "fg": "border/brand",
+      "bg": "surface/brand-tint",
+      "min": 3.0,
+      "where": "Selected radio card outline on its tint"
+    },
+    {
+      "fg": "border/focus",
+      "bg": "surface/page",
+      "min": 3.0,
+      "where": "Focus ring on the page background"
+    },
+    {
+      "fg": "status/danger-fg",
+      "bg": "surface/raised",
+      "min": 4.5,
+      "where": "Field error message"
+    },
+    {
+      "fg": "status/danger-solid",
+      "bg": "status/danger-bg",
+      "min": 3.0,
+      "where": "Error border on an interrupted upload"
+    },
+    {
+      "fg": "status/success-fg",
+      "bg": "surface/raised",
+      "min": 3.0,
+      "where": "Saved / uploaded icon"
+    }
+  ],
+  "forbidden": [
+    {
+      "fg": "pink.500",
+      "bg": "neutral.0",
+      "why": "4.04:1. Fails AA for normal text such as button labels and links."
+    },
+    {
+      "fg": "neutral.0",
+      "bg": "pink.500",
+      "why": "4.04:1. White labels on brand pink fail AA for normal text."
+    },
+    {
+      "fg": "pink.500",
+      "bg": "pink.50",
+      "why": "3.46:1. Brand pink text on the tint fails AA."
+    },
+    {
+      "fg": "pink.600",
+      "bg": "pink.50",
+      "why": "4.38:1. Action pink text on the tint just misses AA; use pink.700."
+    },
+    {
+      "fg": "pink.700",
+      "bg": "pink.100",
+      "why": "4.48:1. Misses AA by a hair on the selected-row tint; use pink.800."
+    },
+    {
+      "fg": "neutral.0",
+      "bg": "pink.200",
+      "why": "Tints 200-400 are decorative only; nothing readable sits on or in them."
+    },
+    {
+      "fg": "neutral.400",
+      "bg": "pink.50",
+      "why": "2.58:1 on pink tint (2.73 on surface/subtle). Fails the 3:1 control-border minimum off white; use border/control."
+    }
+  ]
+}

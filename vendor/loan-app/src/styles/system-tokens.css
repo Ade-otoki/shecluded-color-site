@@ -1,0 +1,72 @@
+/*
+ * Shecluded system tokens for the loan application.
+ * Colors come from color-tokens.css (generated from ../../tokens/source.json — run `npm run tokens` to resync).
+ * This file adds the non-color foundations described in docs/design-system.md.
+ */
+:root {
+  /* Colors, including the action/ink role, live in color-tokens.css (generated from ../../tokens/source.json). */
+
+  /* Typography */
+  --font-family-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-family-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-display-size: 44px;
+  --text-display-line: 48px;
+  --text-h1-size: 34px;
+  --text-h1-line: 40px;
+  --text-h1-size-mobile: 28px;
+  --text-h1-line-mobile: 34px;
+  --text-h2-size: 18px;
+  --text-h2-line: 26px;
+  --text-body-size: 16px;
+  --text-body-line: 24px;
+  --text-small-size: 14px;
+  --text-small-line: 20px;
+  --text-caption-size: 12px;
+  --text-caption-line: 16px;
+  --text-eyebrow-size: 11px;
+  --text-eyebrow-line: 16px;
+  --text-eyebrow-tracking: 0.08em;
+  --text-numeral-size: 36px;
+  --text-numeral-line: 40px;
+
+  /* Spacing (4px base; mirrors Tailwind's scale used in components) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --shape-radius-sm: 8px;
+  --shape-radius-md: 10px;
+  --shape-radius-lg: 16px;
+  --shape-radius-xl: 20px;
+  --shape-radius-full: 999px;
+
+  /* Elevation: cards use borders; shadows only for floating layers */
+  --elevation-float: 0 12px 32px -8px rgb(31 27 29 / 0.18), 0 2px 6px rgb(31 27 29 / 0.06);
+
+  /* Layout */
+  --layout-content-max: 560px;
+  --layout-rail: 248px;
+  --layout-header: 64px;
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-base: 220ms;
+  --motion-slow: 320ms;
+  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layers */
+  --z-header: 10;
+  --z-action-bar: 20;
+  --z-dialog: 40;
+  --z-toast: 50;
+}
